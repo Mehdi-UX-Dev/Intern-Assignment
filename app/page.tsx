@@ -1,3 +1,10 @@
+import Navbar from "@/components/UI_organisms/navbar";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <Navbar />
+      
+    </main>
+  );
 }
