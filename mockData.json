@@ -1,4 +1,6 @@
 
+
+
 {
  "tools": [
 {
@@ -21,7 +23,54 @@
 }  
 ],
 
-"cards": [{}]
+"cards": [{
+    "pictureSource": "/builder.png",
+    "title": "WixPro 72-Inch Responsive Website Builder-",
+    "titleText": "Comprehensive Digital Platform Creation Tool, Streamlined Design Interface for Professional Websites and Online Stores (Black/Blue)",
+    "bodyTitle": "Main highlights",
+    "bodyText": "[What You Get]: Receive the WixPro website builder suite, access to premium design templates, an extensive library of widgets and apps, and detailed step-by-step guides.",
+    "rating": "9.8",
+    "review":"Exceptional",
+    "star": "5",
+    "superDeal" : {
+        "title": "Best Choice",
+        "Icon": "CiTrophy"
+    }
+},{
+    "pictureSource": "/builder.png",
+    "title": "WixPro 72-Inch Responsive Website Builder-",
+    "titleText": "Comprehensive Digital Platform Creation Tool, Streamlined Design Interface for Professional Websites and Online Stores (Black/Blue)",
+    "bodyTitle": "Main highlights",
+    "bodyText": "[What You Get]: Receive the WixPro website builder suite, access to premium design templates, an extensive library of widgets and apps, and detailed step-by-step guides.",
+    "rating": "9.3",
+    "review":"Excellent",
+    "star": "5",
+    "superDeal" : {
+        "title": "Best Value",
+        "Icon": "IoDiamondOutline"
+    }
+},{
+    "pictureSource": "/builder.png",
+    "title": "WixPro 72-Inch Responsive Website Builder-",
+    "titleText": "Comprehensive Digital Platform Creation Tool, Streamlined Design Interface for Professional Websites and Online Stores (Black/Blue)",
+    "bodyTitle": "Main highlights",
+    "bodyText": "[What You Get]: Receive the WixPro website builder suite, access to premium design templates, an extensive library of widgets and apps, and detailed step-by-step guides.",
+    "rating": "9.3",
+    "review":"Exceptional",
+    "star": "5"
+},{
+    "pictureSource": "/builder.png",
+    "title": "WixPro 72-Inch Responsive Website Builder-",
+    "titleText": "Comprehensive Digital Platform Creation Tool, Streamlined Design Interface for Professional Websites and Online Stores (Black/Blue)",
+    "bodyTitle": "Main highlights",
+    "bodyText": "[What You Get]: Receive the WixPro website builder suite, access to premium design templates, an extensive library of widgets and apps, and detailed step-by-step guides.",
+    "rating": "9.1",
+    "review":"Very Good",
+    "star": "4"
+  
+}
+
+]
 
 
 }

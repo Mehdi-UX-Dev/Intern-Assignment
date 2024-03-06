@@ -50,7 +50,6 @@ function Header() {
         <p>Hosting6</p>
         <FaChevronRight />
         <p>Hosting5</p>
-        <FaChevronRight />
       </div>
     </section>
   );
