@@ -10,13 +10,8 @@ function Navbar() {
 
   return (
     <nav className="bg-secondary  p-4 md:h-16  md:pt-2">
-      {!showMobileMenu ? (
-        <div className="flex justify-between items-center text-white">
-          <h1>Logo</h1>{" "}
-          <IoMdMenu size={32} onClick={() => toggleMobileMenu(true)} />
-        </div>
-      ) : (
-        <>
+      {showMobileMenu ? (
+        <div>
           <FaX
             className="text-white md:hidden"
             onClick={() => toggleMobileMenu(false)}
@@ -39,6 +34,35 @@ function Navbar() {
                 Website Builders
               </a>
               <a href="#" className="block md:inline">
+                Today&apos;s Deals
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="flex justify-between items-center text-white md:hidden">
+            <h1>Logo</h1>{" "}
+            <IoMdMenu size={32} onClick={() => toggleMobileMenu(true)} />
+          </div>
+          <div className=" hidden md:flex  items-center justify-center md:space-x-8  ">
+            <div className="relative">
+              <FaSearch className="absolute top-4 ml-1" />
+              <Input
+                state={"Default"}
+                name="search"
+                inputType="text"
+                placeholder="Search for web builders in US"
+              />
+            </div>
+            <div className="text-white md:space-x-4 mt-4 md:mt-0 text-center md:text-start">
+              <a href="#" className="">
+                Categories
+              </a>
+              <a href="#" className="">
+                Website Builders
+              </a>
+              <a href="#" className="">
                 Today&apos;s Deals
               </a>
             </div>
