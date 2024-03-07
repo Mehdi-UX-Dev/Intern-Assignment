@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import StarRatingComponent from "react-star-rating-component";
 import { Button } from "../UI_molecules/button";
 import { CiCircleInfo } from "react-icons/ci";
-
+import ReactStars from "react-stars";
 import { IconType } from "react-icons";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
@@ -106,7 +105,12 @@ function Card({
             </p>
           )}
           <p>{review}</p>
-          <StarRatingComponent name="star" value={star} />
+          <ReactStars
+            className="flex justify-center "
+            edit={false}
+            value={star}
+            size={24}
+          />
         </div>
         <Button label="View" width={"full"} />
       </div>
