@@ -16,7 +16,7 @@ function Navbar() {
             className="text-white md:hidden"
             onClick={() => toggleMobileMenu(false)}
           />
-          <div className="flex flex-col md:flex-row  items-center justify-center md:space-x-8  ">
+          <div className="flex flex-col items-center  justify-center md:flex-row md:space-x-8  ">
             <div className="relative">
               <FaSearch className="absolute top-4 ml-1" />
               <Input
@@ -26,7 +26,7 @@ function Navbar() {
                 placeholder="Search for web builders in US"
               />
             </div>
-            <div className="text-white md:space-x-4 mt-4 md:mt-0 text-center md:text-start">
+            <div className="mt-4 text-center text-white md:mt-0 md:space-x-4 md:text-start">
               <a href="#" className="block md:inline">
                 Categories
               </a>
@@ -41,21 +41,21 @@ function Navbar() {
         </div>
       ) : (
         <>
-          <div className="flex justify-between items-center text-white md:hidden">
+          <div className="flex items-center justify-between text-white md:hidden">
             <h1>Logo</h1>{" "}
             <IoMdMenu size={32} onClick={() => toggleMobileMenu(true)} />
           </div>
-          <div className=" hidden md:flex  items-center justify-center md:space-x-8  ">
+          <div className=" hidden items-center  justify-center md:flex md:space-x-8  ">
             <div className="relative">
-              <FaSearch className="absolute top-4 ml-1" />
+              <FaSearch className="absolute top-3 ml-1" />
               <Input
                 state={"Default"}
                 name="search"
                 inputType="text"
-                placeholder="Search for web builders in US"
+                placeholder="Search for web builders"
               />
             </div>
-            <div className="text-white md:space-x-4 mt-4 md:mt-0 text-center md:text-start">
+            <div className="mt-4 text-center text-white md:mt-0 md:space-x-4 md:text-start">
               <a href="#" className="">
                 Categories
               </a>

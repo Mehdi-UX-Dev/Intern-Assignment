@@ -4,6 +4,7 @@ const inputCVA = cva("h-10 ", {
   variants: {
     state: {
       Default: "pl-8  focus:outline-primary  rounded-lg",
+      lightBackground: "border-2  rounded-l-lg pl-4",
     },
   },
 });
@@ -49,7 +50,7 @@ export const Input = ({
   placeholder,
 }: InputProps) => {
   return (
-    <div className="space-y-1">
+    <div className="">
       <label htmlFor={name}></label>
       <input
         type={inputType}

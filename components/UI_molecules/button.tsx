@@ -5,6 +5,7 @@ const buttonCVA = cva(["rounded", "font-bold", "capitalize"], {
   variants: {
     intent: {
       primary: ["bg-primary", "text-white", "hover:bg-secondary"],
+      inputButton: "rounded-l-none bg-primary text-white hover:bg-secondary",
     },
     size: {
       small: "text-sm px-2 py-[6px]",
