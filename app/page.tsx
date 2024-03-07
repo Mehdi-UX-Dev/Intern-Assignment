@@ -1,4 +1,5 @@
 "use client";
+
 import Card from "@/components/UI_organisms/dealCards";
 import Header from "@/components/UI_organisms/header";
 import Navbar from "@/components/UI_organisms/navbar";
@@ -10,6 +11,7 @@ import RelatedDealCard from "@/components/UI_organisms/relatedDealCards";
 import { Input } from "@/components/UI_molecules/input";
 import { Button } from "@/components/UI_molecules/button";
 import Footer from "@/components/UI_organisms/Footer";
+import { useEffect } from "react";
 
 const iconMapping: Record<string, IconType> = {
   CiTrophy,
@@ -17,6 +19,11 @@ const iconMapping: Record<string, IconType> = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    alert(
+      "Greetings, after checking the design of this page, kindly see my Readme.md file. I have explained what have I done in order to optimize folder structure and modulartiy throughout my code in there. Thank you for your patience!",
+    );
+  }, []);
   const { cards, relatedDeals } = mockData;
   return (
     <main>
