@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Input from "./input";
@@ -5,15 +7,26 @@ import { MdExplore } from "react-icons/md";
 import { FaBell, FaBookmark, FaChevronDown, FaSearch } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
+import { usePathname } from "next/navigation";
+import { cx } from "class-variance-authority";
 
-function Navbar() {
+function Navbar({
+  toggleModal,
+}: {
+  toggleModal?: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const pathname = usePathname();
+
   return (
     <nav className="relative bg-white px-4 py-3 shadow ">
       <div className="mx-auto flex max-w-7xl justify-between">
         <div className="flex items-center space-x-4">
           <Image
-            className="w-48 "
-            src="/logo.png"
+            className={cx({
+              "w-12": pathname === "/home",
+              "w-48": pathname === "/",
+            })}
+            src={pathname === "/" ? "/logo.png" : "/logo_shrink.png"}
             alt="logo"
             width={250}
             height={150}
@@ -54,12 +67,25 @@ function Navbar() {
             <FaBookmark size={24} className="hidden lg:block" />
             <FaBell size={24} />
             <FaCartShopping size={24} className="hidden lg:block" />
-            <TiThMenu size={24} className="block lg:hidden" />
+            <TiThMenu
+              size={24}
+              className="block lg:hidden"
+              onClick={() => toggleModal && toggleModal(true)}
+            />
           </div>
 
-          <button className="hidden rounded-lg border border-primary px-4 py-2 font-semibold text-primary lg:block">
-            Sign In
-          </button>
+          {pathname === "/" && (
+            <button className="hidden rounded-lg border border-primary px-4 py-2 font-semibold text-primary lg:block">
+              Sign In
+            </button>
+          )}
+
+          {pathname === "/home" && (
+            <div className="flex items-center space-x-4 ">
+              <Image src="/pic.png" alt="" height={40} width={40} />
+              <FaChevronDown className="text-gray-400" />
+            </div>
+          )}
         </section>
       </div>
     </nav>
