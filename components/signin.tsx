@@ -2,14 +2,15 @@
 
 import { cx } from "class-variance-authority";
 import { useState } from "react";
-import { FaFacebook } from "react-icons/fa";
+import { FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { IoMdLock } from "react-icons/io";
 import { IoEyeSharp } from "react-icons/io5";
 
 function SignIn() {
   const [signState, toggleSignState] = useState(true);
   return (
-    <div className="col-span-4">
+    <div className=" col-span-4 mt-8">
       <div className="mb-8 flex space-x-8 text-gray-600 ">
         <button
           className={cx("text-xl font-semibold", {
@@ -56,22 +57,60 @@ function SignIn() {
             placeholder="Password"
             className="w-full rounded border border-gray-400 py-2 pl-2"
           />
-          <IoEyeSharp
-            className="absolute right-2 top-2 text-gray-400"
-            size={24}
-          />
+          {signState ? (
+            <IoEyeSharp
+              className="absolute right-2 top-2 text-gray-400"
+              size={24}
+            />
+          ) : (
+            <FaEyeSlash
+              size={24}
+              className="absolute right-2 top-2 text-gray-400 "
+            />
+          )}
         </div>
-        <p className="pt-1 text-right font-semibold text-gray-500">
-          Passwrord strength
-        </p>
-        <p className="mt-2 space-x-1 text-gray-400">
-          By continuing, you agree to our
-          <span className="text-black">Terms of Service</span> and
-          <span className="text-black">Privacy Policy.</span>
-        </p>
+
+        {signState && (
+          <div className="flex items-center justify-between ">
+            <div className=" flex items-center space-x-2">
+              <div className="h-2 w-16 bg-white"></div>
+              <div className="h-2 w-16 bg-white"></div>
+              <div className="h-2 w-16 bg-white"></div>
+            </div>
+            <p className=" text-right font-semibold text-gray-500">
+              Passwrord strength
+            </p>
+          </div>
+        )}
+
+        {signState && (
+          <p className="mt-2 space-x-1 text-gray-400">
+            By continuing, you agree to our
+            <span className="text-black">Terms of Service</span> and
+            <span className="text-black">Privacy Policy.</span>
+          </p>
+        )}
+
+        {!signState && (
+          <div className="mt-2 flex justify-between">
+            <div className=" space-x-2">
+              <input
+                type="checkbox"
+                name="remember me"
+                id="remember me"
+                className="border-2 border-primary"
+              />
+              <label htmlFor="remember me">Remember Me</label>
+            </div>
+            <div className="flex items-center space-x-2 ">
+              <IoMdLock size={20} className="text-gray-400" />
+              <p>Forgot Password?</p>
+            </div>
+          </div>
+        )}
 
         <button className="mt-4 w-full rounded bg-primary py-3 font-bold text-white">
-          Agree and Continue
+          {signState ? "Continue" : "Agree and Continue"}
         </button>
       </div>
     </div>
