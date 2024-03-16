@@ -1,6 +1,7 @@
 "use client";
 
 import { cx } from "class-variance-authority";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -9,6 +10,7 @@ import { IoEyeSharp } from "react-icons/io5";
 
 function SignIn() {
   const [signState, toggleSignState] = useState(true);
+  const { push } = useRouter();
   return (
     <div className=" col-span-4 mt-8">
       <div className="mb-8 flex space-x-8 text-gray-600 ">
@@ -109,7 +111,10 @@ function SignIn() {
           </div>
         )}
 
-        <button className="mt-4 w-full rounded bg-primary py-3 font-bold text-white">
+        <button
+          onClick={() => push("/home")}
+          className="mt-4 w-full rounded bg-primary py-3 font-bold text-white"
+        >
           {signState ? "Continue" : "Agree and Continue"}
         </button>
       </div>

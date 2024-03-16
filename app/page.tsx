@@ -44,7 +44,7 @@ function Page() {
           <div className="bg-[#F7F5F9] px-4 lg:h-[calc(100vh-50px)] lg:px-0">
             <div className="mx-auto  grid h-full  max-w-7xl grid-cols-4  items-center pt-10 lg:grid-cols-12 ">
               <section className=" col-span-4 pl-4 lg:col-span-8 ">
-                <h1 className="text-[2rem] text-lg font-bold ">
+                <h1 className="text-[3rem] text-lg font-bold ">
                   Explore your{" "}
                   <span className="pr-2 italic text-secondary">hobby</span>
                   or
