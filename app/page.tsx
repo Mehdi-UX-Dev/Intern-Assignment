@@ -1,17 +1,33 @@
 "use client";
 import Cards from "@/components/Cards";
 import Header from "@/components/Header";
+import ImageCards from "@/components/ImageCards";
 import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import ImageCard from "@/components/imageCard";
+import { useEffect, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 
 function Home() {
+  const [page, togglePage] = useState({ forum: true, marketStories: false });
   const [isNavOpen, toggleNav] = useState(false);
+
+  const [isMdViewport, setIsMdViewport] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMdViewport(window.innerWidth <= 768);
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    console.log("I am running");
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <main>
-      <Header />
-
-      {/* nav opener */}
+      <Header page={page} togglePage={togglePage} />
 
       {isNavOpen ? (
         <Navbar toggleNav={toggleNav} />
@@ -24,7 +40,14 @@ function Home() {
         </div>
       )}
 
-      <Cards />
+      {isMdViewport && page.forum && <Cards />}
+      {isMdViewport && page.marketStories && <ImageCards />}
+      {!isMdViewport && (
+        <div className="mt-8 grid md:grid-cols-6 lg:grid-cols-12">
+          <Cards />
+          <ImageCards />
+        </div>
+      )}
     </main>
   );
 }
