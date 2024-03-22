@@ -40,7 +40,7 @@ function Card({
           <p className="font-semibold text-blue-900">{time}</p>
         </div>
         <div className="pt-1">
-          <p className="w-[70ch]">{description}</p>
+          <p className="lg:w-[70ch]">{description}</p>
         </div>
         <div className="flex items-center justify-between pr-10 pt-3">
           <div className="flex items-center gap-2">

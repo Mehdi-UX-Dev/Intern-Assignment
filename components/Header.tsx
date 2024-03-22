@@ -30,7 +30,7 @@ function Header({
         </h1>
         <h1
           className={cx(
-            "w-fit py-2 text-center text-[1.5rem] md:rounded-md md:bg-red-100 md:px-4 md:font-bold md:text-red-600 lg:col-span-4",
+            " w-fit py-2 text-center text-[1.5rem] md:rounded-md md:bg-red-100 md:px-4 md:font-bold md:text-red-600 lg:col-span-4",
             {
               " border-b-4 border-red-500 bg-blue-950 md:border-0":
                 page.marketStories,
