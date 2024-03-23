@@ -2,6 +2,14 @@
 import { cx } from "class-variance-authority";
 import React, { SetStateAction, useState } from "react";
 
+/**
+ ** Header Component renders the Discussion Forum and Market Stories headline tags
+ *
+ * @param forum if True renders the "Discussion Forum" section on mobile view
+ * @param marketStories if True render the "Market Stories" section on mobile view
+ * @returns the container that container two h1 tags with styles necessary
+ */
+
 function Header({
   page,
   togglePage,

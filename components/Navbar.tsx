@@ -7,6 +7,13 @@ import {
 import { BsChatRightTextFill } from "react-icons/bs";
 import { AiFillDollarCircle } from "react-icons/ai";
 
+/**
+ ** Navbar component renders the side navbar
+ *
+ * @param toggleNav the setter function for "isNavOpen" which manages the side Navbar for the application
+ * @returns the side Navbar
+ */
+
 function Navbar({
   toggleNav,
 }: {

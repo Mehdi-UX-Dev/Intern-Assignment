@@ -17,6 +17,12 @@ interface CardProps {
   comments: string;
 }
 
+/**
+ ** Card Component renders the every "ForumsCard" component.
+ *
+ ** takes as prop "title", "section", "time" and ... for rendering the component
+ */
+
 function Card({
   title,
   section,

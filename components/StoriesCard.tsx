@@ -6,7 +6,7 @@ interface CardProps {
   description: string;
 }
 
-function ImageCard({ title, description }: CardProps) {
+function Card({ title, description }: CardProps) {
   return (
     <div className="mx-4 bg-white shadow-md   lg:w-fit xl:mx-0">
       <Image
@@ -24,4 +24,4 @@ function ImageCard({ title, description }: CardProps) {
   );
 }
 
-export default ImageCard;
+export default Card;
