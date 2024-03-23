@@ -11,17 +11,15 @@ function Home() {
   const [page, togglePage] = useState({ forum: true, marketStories: false });
   const [isNavOpen, toggleNav] = useState(false);
 
-  const [isMdViewport, setIsMdViewport] = useState(false);
+  const [isLgViewport, setViewport] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      setIsMdViewport(window.innerWidth <= 768);
+      setViewport(window.innerWidth <= 1024);
     }
 
     window.addEventListener("resize", handleResize);
     handleResize();
-
-    console.log("I am running");
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -40,9 +38,9 @@ function Home() {
         </div>
       )}
 
-      {isMdViewport && page.forum && <Cards />}
-      {isMdViewport && page.marketStories && <ImageCards />}
-      {!isMdViewport && (
+      {isLgViewport && page.forum && <Cards />}
+      {isLgViewport && page.marketStories && <ImageCards />}
+      {!isLgViewport && (
         <div className="mt-8 grid md:grid-cols-6 lg:grid-cols-12">
           <Cards />
           <ImageCards />

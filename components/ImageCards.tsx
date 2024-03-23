@@ -4,7 +4,7 @@ import { storiesCards } from "@/data.json";
 
 function ImageCards() {
   return (
-    <div className=" md:col-span-2 lg:col-span-4">
+    <div className="mx-auto w-10/12 space-y-8 lg:col-span-4  lg:w-full">
       {storiesCards.map((item, idx) => (
         <ImageCard key={idx} {...item} />
       ))}

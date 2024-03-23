@@ -8,10 +8,10 @@ interface CardProps {
 
 function ImageCard({ title, description }: CardProps) {
   return (
-    <div className=" bg-white shadow-md lg:w-fit ">
+    <div className="mx-4 bg-white shadow-md  lg:mx-auto lg:w-fit xl:mx-0">
       <Image
         src="/photo.jpg"
-        className="w-full rounded object-cover"
+        className="w-full rounded object-cover "
         height={200}
         width={200}
         alt=""
