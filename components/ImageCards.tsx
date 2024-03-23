@@ -1,6 +1,6 @@
 import React from "react";
 import ImageCard from "./imageCard";
-import { storiesCards } from "@/data.json";
+import { storiesCards } from "@/services/api/data.json";
 
 function ImageCards() {
   return (

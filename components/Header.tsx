@@ -15,7 +15,7 @@ function Header({
   >;
 }) {
   return (
-    <header className="border-x- z-10 h-20 border-black lg:mt-8  lg:border-0 lg:px-4 ">
+    <header className="border-x- z-10 h-20 max-w-6xl border-black lg:mt-8  lg:border-0 lg:px-4 xl:mx-auto ">
       <div className="grid  grid-cols-2 gap-8 bg-blue-800 text-white  lg:grid-cols-12   lg:bg-white">
         <h1
           className={cx(

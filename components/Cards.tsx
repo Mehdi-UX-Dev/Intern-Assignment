@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { forumCards } from "@/data.json";
+import { forumCards } from "@/services/api/data.json";
 
 function Cards() {
   return (

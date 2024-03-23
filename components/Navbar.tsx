@@ -13,14 +13,14 @@ function Navbar({
   toggleNav: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <aside className="absolute top-0  z-20 h-screen w-2/3 bg-blue-900 text-white  md:w-1/3">
+    <aside className=" fixed top-0  z-20  h-screen w-1/2 bg-blue-900 text-white md:w-1/3  lg:w-3/12">
       <div
         onClick={() => toggleNav(false)}
-        className="absolute -right-6 top-1/2 cursor-pointer  rounded-r-xl bg-blue-900 py-16 "
+        className="absolute -right-4  top-1/2 cursor-pointer  rounded-r-xl bg-blue-900 py-16 "
       >
-        <FaChevronLeft size={40} className=" " />
+        <FaChevronLeft size={40} />
       </div>
-      <div className="mt-2 flex items-center border-b px-2 pb-2">
+      <div className="flex items-center border-b px-2 pb-4 pt-6">
         <FaUserCircle size={48} className="mr-2" />
         <h3 className="text-[1.5rem] ">Hello User</h3>
         <FaBell size={32} className="ml-auto " />

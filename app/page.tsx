@@ -3,30 +3,22 @@ import Cards from "@/components/Cards";
 import Header from "@/components/Header";
 import ImageCards from "@/components/ImageCards";
 import Navbar from "@/components/Navbar";
-import ImageCard from "@/components/imageCard";
+import { cx } from "class-variance-authority";
 import { useEffect, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
+
+/**
+ ** Home Component is responsilbe for rendering the home page and it's components
+ ** Responsible for the "page" state which in turn is responsible for toggling between content when the page is in mobile view
+ ** Responsible for "isNavOpen" state which in turn is responsible for opening the side nav bar
+ */
 
 function Home() {
   const [page, togglePage] = useState({ forum: true, marketStories: false });
   const [isNavOpen, toggleNav] = useState(false);
 
-  const [isLgViewport, setViewport] = useState(false);
-
-  useEffect(() => {
-    function handleResize() {
-      setViewport(window.innerWidth <= 1024);
-    }
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
-    <main>
-      <Header page={page} togglePage={togglePage} />
-
+    <main className=" lg:flex">
       {isNavOpen ? (
         <Navbar toggleNav={toggleNav} />
       ) : (
@@ -38,14 +30,23 @@ function Home() {
         </div>
       )}
 
-      {isLgViewport && page.forum && <Cards />}
-      {isLgViewport && page.marketStories && <ImageCards />}
-      {!isLgViewport && (
-        <div className="mt-8 grid md:grid-cols-6 lg:grid-cols-12">
+      <div
+        className={cx(" w-full", {
+          "ml-[26%]": isNavOpen,
+        })}
+      >
+        <Header page={page} togglePage={togglePage} />
+
+        <div className="lg:hidden">
+          {page.forum && <Cards />}
+          {page.marketStories && <ImageCards />}
+        </div>
+
+        <div className="mt-8 hidden  max-w-6xl overflow-auto md:grid-cols-6 lg:grid  lg:grid-cols-12  xl:mx-auto">
           <Cards />
           <ImageCards />
         </div>
-      )}
+      </div>
     </main>
   );
 }

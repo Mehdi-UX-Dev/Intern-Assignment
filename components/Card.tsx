@@ -27,7 +27,7 @@ function Card({
   comments,
 }: CardProps) {
   return (
-    <div className="mx-4  flex w-fit items-start justify-center bg-white px-4 py-2 shadow-lg  md:mx-auto ">
+    <div className="mx-4  flex w-fit  items-start justify-center bg-white px-4 py-2 shadow-lg  md:mx-auto lg:ml-4  ">
       <Image src="/avatar.png" alt="" height={50} width={100} />
       <div>
         <div className="flex items-center justify-between">
@@ -39,10 +39,10 @@ function Card({
           </div>
           <p className=" font-semibold text-blue-900">{time}</p>
         </div>
-        <div className="pt-1">
-          <p className="md:w-[70ch]">{description}</p>
+        <div className="pt-2">
+          <p className="max-w-prose ">{description}</p>
         </div>
-        <div className="flex items-center justify-between pt-3 md:pr-10">
+        <div className="flex items-center justify-between pt-3 md:pr-10 ">
           <div className="flex items-center gap-2">
             <FaRegHeart />
             <p className="font-semibold">{likes}</p>
